@@ -1,0 +1,856 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6612
+load:0x40078000,len:14788
+load:0x40080400,len:3792
+entry 0x40080694
+I (27) boot: ESP-IDF v4.4.1-dirty 2nd stage bootloader
+I (27) boot: compile time 09:46:02
+I (27) boot: chip revision: 3
+I (31) boot_comm: chip revision: 3, min. bootloader chip revision: 0
+I (38) boot.esp32: SPI Speed      : 40MHz
+I (42) boot.esp32: SPI Mode       : DIO
+I (47) boot.esp32: SPI Flash Size : 8MB
+I (51) boot: Enabling RNG early entropy source...
+I (57) boot: Partition Table:
+I (60) boot: ## Label            Usage          Type ST Offset   Length
+I (68) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (75) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (83) boot:  2 factory          factory app      00 00 00010000 00100000
+I (90) boot:  3 storage          Unknown data     01 82 00110000 000f0000
+I (98) boot: End of partition table
+I (102) boot_comm: chip revision: 3, min. application chip revision: 0
+I (109) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=1e900h (125184) map
+I (163) esp_image: segment 1: paddr=0002e928 vaddr=3ffb0000 size=016f0h (  5872) load
+I (165) esp_image: segment 2: paddr=00030020 vaddr=400d0020 size=85114h (545044) map
+I (366) esp_image: segment 3: paddr=000b513c vaddr=3ffb16f0 size=022e4h (  8932) load
+I (370) esp_image: segment 4: paddr=000b7428 vaddr=40080000 size=16710h ( 91920) load
+I (409) esp_image: segment 5: paddr=000cdb40 vaddr=50000000 size=00010h (    16) load
+I (421) boot: Loaded app from partition at offset 0x10000
+I (421) boot: Disabling RNG early entropy source...
+I (432) cpu_start: Pro cpu up.
+I (433) cpu_start: Starting app cpu, entry point is 0x400813b4
+I (0) cpu_start: App cpu up.
+I (446) cpu_start: Pro cpu start user code
+I (447) cpu_start: cpu freq: 160000000
+I (447) cpu_start: Application information:
+I (451) cpu_start: Project name:     modbus_master
+I (457) cpu_start: App version:      1
+I (461) cpu_start: Compile time:     Jul 13 2022 09:45:00
+I (467) cpu_start: ELF file SHA256:  2e129c2b7ec97501...
+I (473) cpu_start: ESP-IDF:          v4.4.1-dirty
+I (479) heap_init: Initializing. RAM available for dynamic allocation:
+I (486) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+I (492) heap_init: At 3FFB7D48 len 000282B8 (160 KiB): DRAM
+I (498) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (504) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (511) heap_init: At 40096710 len 000098F0 (38 KiB): IRAM
+I (518) spi_flash: detected chip: gd
+I (521) spi_flash: flash io: dio
+I (526) cpu_start: Starting scheduler on PRO CPU.
+I (0) cpu_start: Starting scheduler on APP CPU.
+I (628) wifi:wifi driver task: 3ffc0f48, prio:23, stack:6656, core=0
+I (628) system_api: Base MAC address is not set
+I (628) system_api: read default base MAC address from EFUSE
+I (658) wifi:wifi firmware version: 63017e0
+I (658) wifi:wifi certification version: v7.0
+I (658) wifi:config NVS flash: enabled
+I (658) wifi:config nano formating: disabled
+I (658) wifi:Init data frame dynamic rx buffer num: 32
+I (668) wifi:Init management frame dynamic rx buffer num: 32
+I (668) wifi:Init management short buffer num: 32
+I (678) wifi:Init dynamic tx buffer num: 32
+I (678) wifi:Init static rx buffer size: 1600
+I (678) wifi:Init static rx buffer num: 10
+I (688) wifi:Init dynamic rx buffer num: 32
+I (688) wifi_init: rx ba win: 6
+I (688) wifi_init: tcpip mbox: 32
+I (698) wifi_init: udp mbox: 6
+I (698) wifi_init: tcp mbox: 6
+I (708) wifi_init: tcp tx win: 5744
+I (708) wifi_init: tcp rx win: 5744
+I (708) wifi_init: tcp mss: 1440
+I (718) wifi_init: WiFi IRAM OP enabled
+I (718) wifi_init: WiFi RX IRAM OP enabled
+I (728) example_connect: Connecting to SVE_Wifi_2G...
+I (728) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+I (838) wifi:mode : sta (c4:dd:57:5b:eb:48)
+I (838) wifi:enable tsf
+I (848) example_connect: Waiting for IP(s)
+I (2898) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1
+I (3638) wifi:state: init -> auth (b0)
+I (3648) wifi:state: auth -> assoc (0)
+I (3658) wifi:state: assoc -> run (10)
+I (3668) wifi:connected with SVE_Wifi_2G, aid = 4, channel 6, BW20, bssid = 18:e8:29:cd:64:6c
+I (3668) wifi:security: WPA2-PSK, phy: bgn, rssi: -49
+I (3668) wifi:pm start, type: 1
+
+W (3678) wifi:<ba-add>idx:0 (ifx:0, 18:e8:29:cd:64:6c), tid:0, ssn:0, winSize:64
+I (3718) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+I (4618) esp_netif_handlers: example_connect: sta ip: 192.168.0.188, mask: 255.255.255.0, gw: 192.168.0.1
+I (4618) example_connect: Got IPv4 event: Interface "example_connect: sta" address: 192.168.0.188
+I (5618) example_connect: Got IPv6 event: Interface "example_connect: sta" address: fe80:0000:0000:0000:c6dd:57ff:fe5b:eb48, type: ESP_IP6_ADDR_IS_LINK_LOCAL
+I (5618) example_connect: Connected to example_connect: sta
+I (5628) example_connect: - IPv4 address: 192.168.0.188
+I (5628) example_connect: - IPv6 address: fe80:0000:0000:0000:c6dd:57ff:fe5b:eb48, type: ESP_IP6_ADDR_IS_LINK_LOCAL
+I (5638) example: Initializing SPIFFS
+I (5768) example: Partition size: total: 896321, used: 34638
+I (5778) file_server: Starting HTTP Server on port: '80'
+I (5778) uart: queue free spaces: 20
+I (5828) MASTER_TEST: Modbus master stack initialized...
+I (5928) MASTER_TEST: Start modbus test...
+I (5928) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (5938) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.340000 (0x3fab851f) read successful.
+I (5948) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (5958) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (5968) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (5978) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (5998) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0x00000000) read successful.
+I (6018) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa), write successful.
+I (6028) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (6038) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (6538) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (6548) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.440000 (0x3fb851ec) read successful.
+I (6558) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (6568) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (6578) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (6588) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (6608) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (6618) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (6628) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (7128) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (7138) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.540000 (0x3fc51eb9) read successful.
+I (7148) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (7158) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (7168) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (7178) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (7208) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (7208) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (7218) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (7718) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (7728) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.640000 (0x3fd1eb86) read successful.
+I (7738) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (7748) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (7758) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (7768) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (7788) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (7798) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (7808) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (8308) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (8318) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.740000 (0x3fdeb853) read successful.
+I (8328) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (8338) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (8348) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (8358) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (8378) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (8388) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (8398) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (8898) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (8908) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.840000 (0x3feb8520) read successful.
+I (8918) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (8928) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (8938) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (8948) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (8968) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (8978) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (8988) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (9488) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (9498) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.940000 (0x3ff851ed) read successful.
+I (9508) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (9518) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (9528) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (9538) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (9558) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (9568) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (9578) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (10078) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (10088) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 2.040000 (0x40028f5d) read successful.
+I (10098) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (10108) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (10118) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (10128) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (10148) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (10158) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (10168) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (10668) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (10678) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 2.140000 (0x4008f5c3) read successful.
+I (10688) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (10698) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (10708) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (10718) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (10738) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (10748) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (10758) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (11258) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (11268) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 2.240000 (0x400f5c29) read successful.
+I (11278) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (11288) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (11298) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (11308) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (11328) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (11338) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (11348) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (11848) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (11858) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 2.340000 (0x4015c28f) read successful.
+I (11868) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (11878) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (11888) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (11898) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (11918) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (11928) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (11938) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (12438) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (12448) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 2.440000 (0x401c28f5) read successful.
+I (12458) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (12468) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (12478) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (12488) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (12508) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (12518) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (12528) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (13028) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (13038) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 2.540000 (0x40228f5b) read successful.
+I (13048) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (13058) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (13068) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (13078) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (13098) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (13108) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (13118) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (13628) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (13628) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 2.640000 (0x4028f5c1) read successful.
+I (13638) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+E (13798) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x107) (ESP_ERR_TIMEOUT).
+E (13798) MASTER_TEST: Characteristic #3 (Humidity_2) read fail, err = 0x107 (ESP_ERR_TIMEOUT).
+I (13818) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (13828) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (13848) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (13858) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (13868) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (14368) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (14378) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 2.740000 (0x402f5c27) read successful.
+I (14388) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (14398) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (14408) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (14418) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (14438) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (14448) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (14458) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (14958) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (14968) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 2.839999 (0x4035c28d) read successful.
+I (14978) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (14988) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (14998) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (15008) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (15028) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (15038) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (15048) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (15518) file_server: Found file : toto.png (16977 bytes)
+I (15528) file_server: Found file : tito.png (16977 bytes)
+E (15718) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x107) (ESP_ERR_TIMEOUT).
+E (15718) MASTER_TEST: Characteristic #0 (Data_channel_0) read fail, err = 0x107 (ESP_ERR_TIMEOUT).
+I (15738) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 2.939999 (0x403c28f3) read successful.
+I (15748) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (15758) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (15768) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (15778) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (15868) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (15878) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (15888) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (16388) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (16398) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 3.039999 (0x40428f59) read successful.
+I (16408) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (16418) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (16428) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (16438) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (16458) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (16468) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (16478) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (16978) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (16988) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 3.139999 (0x4048f5bf) read successful.
+I (16998) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (17008) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (17018) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (17028) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (17048) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (17058) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (17068) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (17568) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (17578) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 3.239999 (0x404f5c25) read successful.
+I (17588) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (17598) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (17608) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (17618) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (17638) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (17648) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (17658) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (18158) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (18168) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 3.339999 (0x4055c28b) read successful.
+I (18178) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (18188) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (18198) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (18208) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (18228) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (18238) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (18248) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (18748) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (18758) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 3.439999 (0x405c28f1) read successful.
+I (18768) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (18778) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (18788) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (18798) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (18818) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (18828) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (18838) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (19338) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (19348) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 3.539999 (0x40628f57) read successful.
+I (19358) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (19368) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (19378) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (19388) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (19408) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (19418) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (19428) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (19928) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (19938) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 3.639999 (0x4068f5bd) read successful.
+I (19948) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (19958) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (19968) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (19978) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (19998) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (20008) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (20018) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (20218) file_server: Deleting file : /toto.png
+I (20438) file_server: Found file : tito.png (16977 bytes)
+I (20518) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (20528) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 3.739999 (0x406f5c23) read successful.
+I (20538) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (20548) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (20558) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (20568) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (20588) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (20598) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (20608) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (21108) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (21118) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 3.839998 (0x4075c289) read successful.
+I (21128) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (21138) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (21148) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (21158) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (21178) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (21188) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (21198) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (21698) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (21708) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 3.939998 (0x407c28ef) read successful.
+I (21718) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (21728) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (21738) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (21748) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (21768) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (21778) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (21788) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (22148) file_server: Deleting file : /tito.png
+I (22288) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (22298) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 4.039999 (0x408147ab) read successful.
+I (22308) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (22318) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (22328) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (22368) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (22398) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (22408) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+E (22608) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x107) (ESP_ERR_TIMEOUT).
+E (22618) MASTER_TEST: Characteristic #8 (RelayP2) read fail, err = 0x107 (ESP_ERR_TIMEOUT).
+I (23118) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (23128) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 4.139998 (0x40847ade) read successful.
+I (23138) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (23148) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (23158) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (23168) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (23188) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (23198) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (23208) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (23708) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (23718) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 4.239998 (0x4087ae11) read successful.
+I (23728) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (23738) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (23748) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (23758) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (23778) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (23788) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (23798) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (24298) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (24308) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 4.339998 (0x408ae144) read successful.
+I (24318) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (24328) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (24338) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (24348) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (24368) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (24378) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (24388) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (24888) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (24898) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 4.439998 (0x408e1477) read successful.
+I (24908) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (24918) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (24928) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (24938) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (24958) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (24968) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (24978) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (25478) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (25488) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 4.539998 (0x409147aa) read successful.
+I (25498) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (25508) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (25518) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (25528) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (25548) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (25558) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (25568) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (26068) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (26078) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 4.639998 (0x40947add) read successful.
+I (26088) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (26098) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (26108) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (26118) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (26138) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (26148) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (26158) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (26658) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (26668) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 4.739998 (0x4097ae10) read successful.
+I (26678) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (26688) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (26698) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (26708) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (26728) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (26738) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (26748) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (27248) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (27258) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 4.839998 (0x409ae143) read successful.
+I (27268) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (27278) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (27288) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (27298) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (27318) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (27328) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (27338) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (27838) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (27848) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 4.939998 (0x409e1476) read successful.
+I (27858) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (27868) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (27878) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (27888) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (27908) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (27918) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (27928) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (28428) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (28438) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 5.039998 (0x40a147a9) read successful.
+I (28448) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (28458) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (28468) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (28478) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (28498) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (28508) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (28518) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (29148) file_server: Receiving file : /toto.png...
+I (29148) file_server: Remaining size : 16977
+E (29198) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x107) (ESP_ERR_TIMEOUT).
+E (29198) MASTER_TEST: Characteristic #0 (Data_channel_0) read fail, err = 0x107 (ESP_ERR_TIMEOUT).
+I (29208) file_server: Remaining size : 12657
+I (29228) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 5.139997 (0x40a47adc) read successful.
+I (29268) file_server: Remaining size : 8337
+I (29328) file_server: Remaining size : 4017
+I (29398) file_server: File reception complete
+E (29398) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x107) (ESP_ERR_TIMEOUT).
+E (29408) MASTER_TEST: Characteristic #2 (Temperature_1) read fail, err = 0x107 (ESP_ERR_TIMEOUT).
+I (29428) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (29438) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (29448) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (29468) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (29478) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (29488) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (29538) file_server: Found file : toto.png (16977 bytes)
+I (29988) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (29998) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 5.239997 (0x40a7ae0f) read successful.
+I (30008) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (30018) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (30028) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (30038) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (30058) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (30068) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (30078) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (30578) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (30588) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 5.339997 (0x40aae142) read successful.
+I (30598) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (30608) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (30618) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (30628) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (30658) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (30658) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (30668) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (31168) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (31178) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 5.439997 (0x40ae1475) read successful.
+I (31188) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (31198) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (31208) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (31218) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (31238) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (31248) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (31258) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (31758) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (31768) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 5.539997 (0x40b147a8) read successful.
+I (31778) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (31788) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (31798) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (31808) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (31828) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (31838) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (31848) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (32348) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (32358) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 5.639997 (0x40b47adb) read successful.
+I (32368) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (32378) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (32388) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (32398) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (32418) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (32428) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (32438) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (32938) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (32948) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 5.739997 (0x40b7ae0e) read successful.
+I (32958) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (32968) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (32978) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (32988) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (33008) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (33018) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (33028) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (33528) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (33538) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 5.839997 (0x40bae141) read successful.
+I (33548) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (33558) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (33568) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (33578) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (33608) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (33608) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (33618) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (34118) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (34128) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 5.939997 (0x40be1474) read successful.
+I (34138) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (34148) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (34158) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (34168) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (34188) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (34198) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (34208) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (34708) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (34718) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 6.039997 (0x40c147a7) read successful.
+I (34728) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (34738) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (34748) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (34758) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (34778) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (34788) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (34798) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (35298) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (35308) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 6.139997 (0x40c47ada) read successful.
+I (35318) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (35328) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (35338) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (35348) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (35368) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (35378) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (35388) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (35888) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (35898) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 6.239996 (0x40c7ae0d) read successful.
+I (35908) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (35918) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (35928) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (35938) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (35958) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (35968) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (35978) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+I (36478) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 1.120000 (0x3f8f5c29) read successful.
+I (36488) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 6.339996 (0x40cae140) read successful.
+I (36498) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+I (36508) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.560000 (0x4023d70a) read successful.
+I (36518) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 3.560000 (0x4063d70a) read successful.
+I (36528) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.780000 (0x4071eb85) read successful.
+I (36548) MASTER_TEST: Characteristic #6 Test_regs (__) value = (0xaaaaaaaa) read successful.
+I (36558) MASTER_TEST: Characteristic #7 RelayP1 (on/off) value = OFF (0xeb55) read successful.
+I (36568) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = OFF (0xebaa) read successful.
+E (37308) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x107) (ESP_ERR_TIMEOUT).
+E (37308) MASTER_TEST: Characteristic #0 (Data_channel_0) read fail, err = 0x107 (ESP_ERR_TIMEOUT).
+I (37318) file_server: Receiving file : /tito.png...
+I (37328) file_server: Remaining size : 16977
+I (37328) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 6.439996 (0x40ce1473) read successful.
+I (37368) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 2.340000 (0x4015c28f) read successful.
+E (37398) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (37398) MASTER_TEST: Characteristic #3 (Humidity_2) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+I (37408) file_server: Remaining size : 12657
+E (37408) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (37428) MASTER_TEST: Characteristic #4 (Temperature_2) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+I (37438) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.560000 (0x4063d70a) read successful.
+E (37458) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (37458) MASTER_TEST: Characteristic #6 (Test_regs) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (37448) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (37478) file_server: Remaining size : 8337
+E (37518) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (37518) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (37528) MASTER_TEST: Characteristic #7 (RelayP1) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+I (37538) file_server: Remaining size : 4017
+E (37548) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (37548) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = ON (0xd755) read successful.
+I (37658) file_server: File reception complete
+I (37748) file_server: Found file : toto.png (16977 bytes)
+I (37748) file_server: Found file : tito.png (16977 bytes)
+I (38058) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 3.560038 (0x4063d7aa) read successful.
+E (38058) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (38058) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.120000 (0x3f8f5c29) read successful.
+E (38078) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (38078) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 6.539996 (0x40d147a6) read successful.
+E (38098) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (38098) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.340000 (0x4015c28f) read successful.
+E (38118) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (38118) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 2.560000 (0x4023d70a) read successful.
+E (38138) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (38138) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.560000 (0x4063d70a) read successful.
+E (38148) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (38158) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (38168) MASTER_TEST: Characteristic #6 (Test_regs) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (38198) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (38198) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (38208) MASTER_TEST: Characteristic #7 (RelayP1) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (38218) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (38228) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = ON (0xd755) read successful.
+I (38728) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 3.560038 (0x4063d7aa) read successful.
+E (38728) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (38728) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.120000 (0x3f8f5c29) read successful.
+E (38748) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (38748) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 6.639996 (0x40d47ad9) read successful.
+E (38768) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (38768) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.340000 (0x4015c28f) read successful.
+E (38788) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (38788) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 2.560000 (0x4023d70a) read successful.
+E (38808) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (38808) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.560000 (0x4063d70a) read successful.
+E (38818) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (38828) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (38838) MASTER_TEST: Characteristic #6 (Test_regs) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (38868) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (38868) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (38878) MASTER_TEST: Characteristic #7 (RelayP1) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (38888) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (38898) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = ON (0xd755) read successful.
+I (39398) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 3.560038 (0x4063d7aa) read successful.
+E (39398) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (39398) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.120000 (0x3f8f5c29) read successful.
+E (39418) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (39418) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 6.739996 (0x40d7ae0c) read successful.
+E (39438) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (39438) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.340000 (0x4015c28f) read successful.
+E (39458) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (39458) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 2.560000 (0x4023d70a) read successful.
+E (39478) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (39478) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.560000 (0x4063d70a) read successful.
+E (39488) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (39498) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (39508) MASTER_TEST: Characteristic #6 (Test_regs) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (39538) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (39538) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (39548) MASTER_TEST: Characteristic #7 (RelayP1) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (39568) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (39568) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = ON (0xd755) read successful.
+I (40078) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 3.560038 (0x4063d7aa) read successful.
+E (40078) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (40078) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.120000 (0x3f8f5c29) read successful.
+E (40098) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (40098) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 6.839996 (0x40dae13f) read successful.
+E (40118) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (40118) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.340000 (0x4015c28f) read successful.
+E (40138) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (40138) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 2.560000 (0x4023d70a) read successful.
+E (40158) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (40158) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.560000 (0x4063d70a) read successful.
+E (40168) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (40178) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (40188) MASTER_TEST: Characteristic #6 (Test_regs) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (40218) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (40218) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (40228) MASTER_TEST: Characteristic #7 (RelayP1) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (40238) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (40248) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = ON (0xd755) read successful.
+I (40748) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 3.560038 (0x4063d7aa) read successful.
+E (40748) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (40748) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.120000 (0x3f8f5c29) read successful.
+E (40768) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (40768) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 6.939996 (0x40de1472) read successful.
+E (40788) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (40788) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.340000 (0x4015c28f) read successful.
+E (40808) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (40808) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 2.560000 (0x4023d70a) read successful.
+E (40828) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (40828) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.560000 (0x4063d70a) read successful.
+E (40838) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (40848) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (40858) MASTER_TEST: Characteristic #6 (Test_regs) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (40888) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (40888) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (40898) MASTER_TEST: Characteristic #7 (RelayP1) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (40918) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (40918) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = ON (0xd755) read successful.
+I (41428) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 3.560038 (0x4063d7aa) read successful.
+E (41428) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (41428) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.120000 (0x3f8f5c29) read successful.
+E (41448) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (41448) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 7.039996 (0x40e147a5) read successful.
+E (41468) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (41468) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.340000 (0x4015c28f) read successful.
+E (41488) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (41488) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 2.560000 (0x4023d70a) read successful.
+E (41508) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (41508) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.560000 (0x4063d70a) read successful.
+E (41518) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (41528) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (41538) MASTER_TEST: Characteristic #6 (Test_regs) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (41568) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (41568) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (41578) MASTER_TEST: Characteristic #7 (RelayP1) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (41588) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (41598) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = ON (0xd755) read successful.
+I (42098) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 3.560038 (0x4063d7aa) read successful.
+E (42098) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (42108) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.120000 (0x3f8f5c29) read successful.
+E (42118) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (42118) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 7.139996 (0x40e47ad8) read successful.
+E (42138) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (42138) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.340000 (0x4015c28f) read successful.
+E (42158) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (42158) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 2.560000 (0x4023d70a) read successful.
+E (42178) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (42178) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.560000 (0x4063d70a) read successful.
+E (42198) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (42198) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (42208) MASTER_TEST: Characteristic #6 (Test_regs) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (42238) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (42238) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (42248) MASTER_TEST: Characteristic #7 (RelayP1) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (42268) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (42268) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = ON (0xd755) read successful.
+I (42778) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 3.560038 (0x4063d7aa) read successful.
+E (42778) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (42778) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.120000 (0x3f8f5c29) read successful.
+E (42798) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (42798) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 7.239995 (0x40e7ae0b) read successful.
+E (42958) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (42968) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x107) (ESP_ERR_TIMEOUT).
+E (42968) MASTER_TEST: Characteristic #3 (Humidity_2) read fail, err = 0x107 (ESP_ERR_TIMEOUT).
+E (42988) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (42988) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 2.560000 (0x4023d70a) read successful.
+E (43008) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (43008) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.560000 (0x4063d70a) read successful.
+E (43028) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (43028) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (43038) MASTER_TEST: Characteristic #6 (Test_regs) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (43068) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (43068) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (43078) MASTER_TEST: Characteristic #7 (RelayP1) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (43098) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (43098) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = ON (0xd755) read successful.
+I (43608) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 3.560038 (0x4063d7aa) read successful.
+E (43608) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (43608) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.120000 (0x3f8f5c29) read successful.
+E (43628) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (43628) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 7.339995 (0x40eae13e) read successful.
+E (43648) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (43648) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.340000 (0x4015c28f) read successful.
+E (43668) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (43668) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 2.560000 (0x4023d70a) read successful.
+E (43688) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (43688) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.560000 (0x4063d70a) read successful.
+E (43698) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (43708) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (43718) MASTER_TEST: Characteristic #6 (Test_regs) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (43748) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (43748) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (43758) MASTER_TEST: Characteristic #7 (RelayP1) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (43778) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (43778) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = ON (0xd755) read successful.
+I (44288) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 3.560038 (0x4063d7aa) read successful.
+E (44288) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (44288) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.120000 (0x3f8f5c29) read successful.
+E (44308) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (44308) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 7.439995 (0x40ee1471) read successful.
+E (44328) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (44328) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.340000 (0x4015c28f) read successful.
+E (44348) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (44348) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 2.560000 (0x4023d70a) read successful.
+E (44368) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (44368) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.560000 (0x4063d70a) read successful.
+E (44378) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (44388) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (44398) MASTER_TEST: Characteristic #6 (Test_regs) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (44428) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (44428) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (44438) MASTER_TEST: Characteristic #7 (RelayP1) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (44448) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (44458) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = ON (0xd755) read successful.
+I (44958) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 3.560038 (0x4063d7aa) read successful.
+E (44958) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (44968) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.120000 (0x3f8f5c29) read successful.
+E (44978) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (44978) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 7.539995 (0x40f147a4) read successful.
+E (44998) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (44998) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.340000 (0x4015c28f) read successful.
+E (45018) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (45018) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 2.560000 (0x4023d70a) read successful.
+E (45038) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (45038) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.560000 (0x4063d70a) read successful.
+E (45058) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (45058) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (45068) MASTER_TEST: Characteristic #6 (Test_regs) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (45098) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (45098) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (45108) MASTER_TEST: Characteristic #7 (RelayP1) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (45128) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (45128) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = ON (0xd755) read successful.
+I (45638) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 3.560038 (0x4063d7aa) read successful.
+E (45638) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (45638) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.120000 (0x3f8f5c29) read successful.
+E (45658) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (45658) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 7.639995 (0x40f47ad7) read successful.
+E (45678) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (45678) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.340000 (0x4015c28f) read successful.
+E (45698) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (45698) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 2.560000 (0x4023d70a) read successful.
+E (45718) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (45718) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.560000 (0x4063d70a) read successful.
+E (45728) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (45738) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (45748) MASTER_TEST: Characteristic #6 (Test_regs) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (45778) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (45778) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (45788) MASTER_TEST: Characteristic #7 (RelayP1) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (45808) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (45808) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = ON (0xd755) read successful.
+I (46318) MASTER_TEST: Characteristic #0 Data_channel_0 (Volts) value = 3.560038 (0x4063d7aa) read successful.
+E (46318) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (46318) MASTER_TEST: Characteristic #1 Humidity_1 (%rH) value = 1.120000 (0x3f8f5c29) read successful.
+E (46338) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (46338) MASTER_TEST: Characteristic #2 Temperature_1 (C) value = 7.739995 (0x40f7ae0a) read successful.
+E (46358) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (46358) MASTER_TEST: Characteristic #3 Humidity_2 (%rH) value = 2.340000 (0x4015c28f) read successful.
+E (46378) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (46378) MASTER_TEST: Characteristic #4 Temperature_2 (C) value = 2.560000 (0x4023d70a) read successful.
+E (46398) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (46398) MASTER_TEST: Characteristic #5 Humidity_3 (%rH) value = 3.560000 (0x4063d70a) read successful.
+E (46408) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (46418) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (46428) MASTER_TEST: Characteristic #6 (Test_regs) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (46458) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+E (46458) MB_CONTROLLER_MASTER: mbc_master_get_parameter(85): Master get parameter failure, error=(0x108) (ESP_ERR_INVALID_RESPONSE).
+E (46468) MASTER_TEST: Characteristic #7 (RelayP1) read fail, err = 0x108 (ESP_ERR_INVALID_RESPONSE).
+E (46478) MB_PORT_COMMON: vMBMasterRunResRelease(195): Resource release failure.
+I (46488) MASTER_TEST: Characteristic #8 RelayP2 (on/off) value = ON (0xd755) read successful.
+
